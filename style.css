@@ -1,0 +1,112 @@
+body {
+  background-color: #f5f5f5;
+  font-family: "Raleway", sans-serif;
+}
+header {
+  height: 520px;
+}
+
+#top-nav {
+  padding: 50px 20px;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#top-nav a,
+nav a {
+  text-decoration: none;
+  color: black;
+}
+nav a {
+  padding-right: 5px;
+}
+nav a:hover {
+  color: blue;
+}
+
+#apresentacao {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+#apresentacao h1 {
+  font-weight: 700;
+  font-size: 52px;
+}
+#apresentacao h1,
+#apresentacao p {
+  margin-bottom: 20px;
+}
+.out-link {
+  height: 16px;
+}
+#me {
+  border-radius: 50%;
+  height: 368px;
+}
+
+#sobre-mim {
+  background-color: #eaf2fd;
+  padding: 64px 0;
+}
+#sobre-mim div {
+  width: 85%;
+  margin: auto;
+}
+#sobre-mim h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 50px;
+}
+#sobre-mim p {
+  line-height: 18.78px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 70%;
+}
+
+#skills,
+#hobbies {
+  height: 348px;
+}
+
+#skills h1,
+#hobbies h1,
+#formacao h1 {
+  padding: 32px 0;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
+}
+#skills div,
+#hobbies div {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+}
+
+#formacao {
+  height: 581px;
+  background-color: #eaf2fd;
+}
+#formacao div {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  height: 175px;
+  width: 175px;
+  background-color: white;
+}
+
+.card-formacao {
+  height: 286px;
+  width: 368px;
+  background-color: white;
+}
