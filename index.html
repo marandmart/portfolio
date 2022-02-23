@@ -28,7 +28,7 @@
         </nav>
       </div>
       <div id="apresentacao">
-        <div>
+        <div class="apresentacao-texto">
           <h1>Olá, meu nome é Mário André Martins e eu construo páginas web</h1>
           <p>
             Eu estou cursando Ciência da Computação na UNIT-AL e eu atualmente
@@ -43,7 +43,7 @@
             </span>
           </div>
         </div>
-        <div>
+        <div class="apresentacao-imagem">
           <img src="assets/me.jpg" alt="Mario Andre Martins" id="me" />
         </div>
       </div>
@@ -70,32 +70,173 @@
       </section>
       <section id="skills">
         <h1>Skills</h1>
-        <div>
-          <div class="card">HTML</div>
-          <div class="card">CSS</div>
-          <div class="card">JavaScript</div>
-          <div class="card">Python</div>
-          <div class="card">React</div>
+        <div class="skills-card-container">
+          <div class="card">
+            <img src="assets/skills/html5.svg" alt="icone html5" />
+            <span>HTML</span>
+          </div>
+          <div class="card">
+            <img src="assets/skills/css3.svg" alt="icone css" />
+            <span>CSS</span>
+          </div>
+          <div class="card">
+            <img src="assets/skills/js.svg" alt="icone javascript" />
+            <span>JavaScript</span>
+          </div>
+          <div class="card">
+            <img src="assets/skills/python.svg" alt="icone python" />
+            <span>Python</span>
+          </div>
+          <div class="card">
+            <img src="assets/skills/react.svg" alt="icone react" />
+            <span>React</span>
+          </div>
         </div>
       </section>
       <section id="hobbies">
         <h1>Hobbies</h1>
-        <div>
-          <div class="card">Jogar jogos</div>
-          <div class="card">Assistir filmes e seriados</div>
-          <div class="card">Ouvir música</div>
-          <div class="card">Ouvir podcasts</div>
-          <div class="card">Estudar linguas</div>
+        <div class="hobbies-card-container">
+          <div class="card">
+            <img src="assets/hobbies/games.svg" alt="icone de jogos" />
+            <span>Jogar jogos</span>
+          </div>
+          <div class="card">
+            <img src="assets/hobbies/screen.svg" alt="icone de tela" />
+            <span>Assistir filmes e seriados</span>
+          </div>
+          <div class="card">
+            <img
+              src="assets/hobbies/headphones.svg"
+              alt="icone de fones de ouvido"
+            />
+            <span>Ouvir música</span>
+          </div>
+          <div class="card">
+            <img src="assets/hobbies/podcast.svg" alt="icone de podcast" />
+            <span>Ouvir podcasts</span>
+          </div>
+          <div class="card">
+            <img src="assets/hobbies/languages.svg" alt="icone de linguas" />
+            <span>Estudar linguas</span>
+          </div>
         </div>
       </section>
       <section id="formacao">
         <h1>Formação Acadêmica</h1>
         <div>
-          <div class="card-formacao">Universidade Federal de Alagoas</div>
-          <div class="card-formacao">UNIT-AL</div>
+          <div class="card-formacao">
+            <img
+              src="assets/formacao/ufal.png"
+              alt="brasão universidade federal de alagoas"
+            />
+            <span>Engenharia Civil</span>
+            <span>2012 - 2018</span>
+          </div>
+          <div class="card-formacao">
+            <img
+              src="assets/formacao/unit.jpg"
+              alt="brasão universidade tiradentes"
+            />
+            <span>Ciência da Computação</span>
+            <span>2020 - presente</span>
+          </div>
         </div>
       </section>
-      <section id="projetos"></section>
+      <section id="projetos">
+        <h1>Experiência Profissional</h1>
+        <div class="projeto-container">
+          <div class="projeto-imagem">
+            <img
+              src="assets/projetos/codificador.png"
+              alt="imagem da tela do site do projeto decodificador de textos"
+            />
+          </div>
+          <div class="projeto-info">
+            <h2>Decodificador de texto</h2>
+            <p>Challenge Alura Codificador</p>
+            <a href="https://github.com/marandmart/alura-oracle-challenge-1"
+              >Repositório</a
+            >
+            <a href="https://marandmart.github.io/alura-oracle-challenge-1/"
+              >Ver demo</a
+            >
+          </div>
+        </div>
+        <div class="projeto-container">
+          <div class="projeto-imagem">
+            <img
+              src="assets/projetos/forca.png"
+              alt="imagem da tela do site do projeto jogo da forca"
+            />
+          </div>
+          <div class="projeto-info">
+            <h2>Jogo criado com HTML, CSS e JavaScript</h2>
+            <p>Challenge Oracle</p>
+            <a href="https://github.com/marandmart/alura-oracle-challenge-2"
+              >Repositório</a
+            >
+            <a href="https://marandmart.github.io/alura-oracle-challenge-2/"
+              >Ver demo</a
+            >
+          </div>
+        </div>
+        <div class="projeto-container">
+          <div class="projeto-imagem">
+            <img
+              src="assets/projetos/netgames.png"
+              alt="imagem da tela do site do clone da página da netflix"
+            />
+          </div>
+          <div class="projeto-info">
+            <h2>Página criada com HTML, CSS e JavaScript</h2>
+            <p>Challenge DIO</p>
+            <a href="https://github.com/marandmart/DIO-Netflix-Clone"
+              >Repositório</a
+            >
+            <a href="https://netgames.netlify.app">Ver demo</a>
+          </div>
+        </div>
+      </section>
+      <section id="contato">
+        <div class="contato-container">
+          <div class="contato-imagem">
+            <img src="assets/email.png" alt="icone de um email sendo enviado" />
+          </div>
+          <div class="contato-formulario">
+            <h1>Contato</h1>
+            <p>Quer entrar em contato comigo?</p>
+            <p>
+              Preencha o formulário e eu entrarei em contato com você o mais
+              rápido possível
+            </p>
+            <form action="" class="formulario">
+              <label for="nome"
+                >Nome:
+                <input type="text" name="nome" id="nome" />
+              </label>
+              <label for="email"
+                >Email:
+                <input type="email" name="email" id="email" />
+              </label>
+              <label for="assunto"
+                >Assunto:
+                <input type="text" name="assunto" id="assunto" />
+              </label>
+              <label for="mensagem">Mensagem:</label>
+              <textarea name="mensagem" id="mensagem"></textarea>
+              <input type="submit" value="Enviar Mensagem" class="btn-submit" />
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer>
+      <p>Desenvolvido por Mário André Martins</p>
+      <p>2022</p>
+      <br />
+      <a href="https://www.flaticon.com/free-icons/mail" title="mail icons"
+        >Mail icons created by Freepik - Flaticon</a
+      >
+    </footer>
   </body>
 </html>
