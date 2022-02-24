@@ -331,6 +331,15 @@ footer a {
   }
 
   @media screen and (max-width: 400px) {
+    #top-nav a {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    #top-nav nav a:last-child {
+      margin-left: 10px;
+      font-weight: 400;
+      font-size: 14px;
+    }
     #apresentacao {
       flex-direction: column-reverse;
       align-items: flex-start;
