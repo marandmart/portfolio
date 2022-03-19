@@ -4,30 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header/navegacao.css" />
     <title>Mário André Martins</title>
   </head>
   <body>
     <header>
-      <div id="top-nav">
-        <a href=".">
-          <img src="assets/sparkle.png" alt="icone estrela" />
-          Mário André Martins</a
-        >
-        <nav>
-          <a href="#sobre-mim">Sobre Mim</a>
-          <a href="#skills">Skills</a>
-          <a href="#hobbies">Hobbies</a>
-          <a href="#formacao">Formação</a>
-          <a href="#projetos">Projetos</a>
-          <a href="mailto:mario.andre.m@gmail.com">mario.andre.m@gmail.com</a>
+      <div id="top-nav" class="navegacao">
+        <div class="navegacao__nome">
+          <img src="assets/sparkle.png" alt="" class="navegacao__nome__icone" />
+          <span class="navegacao__nome__texto">Mário André Martins</span>
+        </div>
+        <nav class="navegacao__links">
+          <a href="#sobre-mim" class="navegacao__links__link">Sobre Mim</a>
+          <a href="#skills" class="navegacao__links__link">Skills</a>
+          <a href="#hobbies" class="navegacao__links__link">Hobbies</a>
+          <a href="#formacao" class="navegacao__links__link">Formação</a>
+          <a href="#projetos" class="navegacao__links__link">Projetos</a>
+          <a
+            href="mailto:mario.andre.m@gmail.com"
+            class="navegacao__links__link"
+            >mario.andre.m@gmail.com</a
+          >
         </nav>
       </div>
       <div id="apresentacao">
