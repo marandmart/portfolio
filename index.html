@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/header/navegacao.css" />
+    <link rel="stylesheet" href="css/header/apresentacao.css" />
     <title>Mário André Martins</title>
   </head>
   <body>
@@ -35,32 +36,33 @@
           >
         </nav>
       </div>
-      <div id="apresentacao">
-        <div class="apresentacao-texto">
-          <h1>Olá, meu nome é Mário André Martins e eu sou um desenvolvedor</h1>
-          <p>
+      <div class="apresentacao">
+        <div class="apresentacao__conteudo">
+          <h1 class="apresentacao__conteudo__titulo">
+            Olá, meu nome é Mário André Martins e eu sou um desenvolvedor
+          </h1>
+          <p class="apresentacao__conteudo__texto">
             Atualmente estou cursando Ciência da Computação na UNIT-AL e eu
             estou participando do programa Oracle-ONE.
           </p>
-          <div id="social">
-            <span>
-              <a href="http://github.com/marandmart"
-                >Github
-                <img src="assets/Vector.png" alt="seta" class="out-link"
-              /></a>
-            </span>
-            <span>
-              <a
-                href="https://drive.google.com/file/d/1DeEB2QDsaznE1IXKh7szN8IVhcwQg0F6/view?usp=sharing"
-                >Currículo
-                <img src="assets/Vector.png" alt="seta" class="out-link"
-              /></a>
-            </span>
+          <div class="apresentacao__conteudo__redes">
+            <a href="http://github.com/marandmart" class="apresentacao__conteudo__redes__rede"
+              >Github <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.05027 12.364L10.6558 3.75847V11.6639L12.6569 11.6569V0.343146H1.34316V2.33719L9.24154 2.34426L0.636051 10.9497L2.05027 12.364Z" fill="#464646"/>
+                </svg></span
+            ></a>
+            <a
+              href="https://drive.google.com/file/d/1DeEB2QDsaznE1IXKh7szN8IVhcwQg0F6/view?usp=sharing" class="apresentacao__conteudo__redes__rede"
+              >Currículo <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.05027 12.364L10.6558 3.75847V11.6639L12.6569 11.6569V0.343146H1.34316V2.33719L9.24154 2.34426L0.636051 10.9497L2.05027 12.364Z" fill="#464646"/>
+                </svg></a>
           </div>
         </div>
-        <div class="apresentacao-imagem">
-          <img src="assets/me.jpg" alt="Mario Andre Martins" id="me" />
-        </div>
+        <img
+          src="assets/me.jpg"
+          alt="foto do dono do portfolio"
+          class="apresentacao__imagem"
+        />
       </div>
     </header>
     <main>

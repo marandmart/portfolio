@@ -3,34 +3,15 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-#apresentacao {
+#top-nav,
+#apresentacao,
+#sobre-mim div,
+.skills-card-container,
+.hobbies-card-container,
+#formacao div,
+.projeto-container,
+.contato-formulario {
   width: 85%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  padding-bottom: 32px;
-}
-#apresentacao h1 {
-  font-weight: 700;
-  font-size: 52px;
-}
-#apresentacao h1,
-#apresentacao p {
-  margin-bottom: 20px;
-}
-.out-link {
-  height: 16px;
-}
-#social span {
-  margin-right: 32px;
-}
-#social span a {
-  text-decoration: none;
-  color: black;
-}
-#me {
-  border-radius: 50%;
-  height: 368px;
 }
 
 #sobre-mim {
