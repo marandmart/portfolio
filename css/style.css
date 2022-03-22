@@ -3,35 +3,22 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-#top-nav,
+.navegacao,
 .apresentacao,
 .sobre-mim__conteudo,
-.skills-card-container,
-.hobbies-card-container,
+.skills__container,
+.hobbies__container,
 #formacao div,
 .projeto-container,
 .contato-formulario {
   width: 85%;
 }
 
-#hobbies {
-  padding: 40px 0;
-}
-
-#hobbies h1,
 #formacao h1 {
   padding: 32px 0;
   font-weight: 700;
   font-size: 32px;
   text-align: center;
-}
-
-.hobbies-card-container {
-  width: 85%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
 }
 
 #formacao {
@@ -45,24 +32,6 @@ body {
   margin: auto;
   display: flex;
   gap: 10px;
-}
-
-.card {
-  height: 175px;
-  width: 175px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  border-radius: 10px;
-}
-.card img {
-  max-width: 50px;
-  max-height: 50px;
-  margin-left: 20px;
-}
-.card span {
-  margin: 5px 0 20px 20px;
 }
 
 .card-formacao {
@@ -223,22 +192,15 @@ footer a {
   color: black;
 }
 @media screen and (max-width: 850px) {
-  #top-nav,
-  #apresentacao,
-  #sobre-mim div,
-  .skills-card-container,
-  .hobbies-card-container,
+  .navegacao,
+  .apresentacao,
+  .sobre-mim__conteudo,
+  .skills__container,
+  .hobbies__container,
   #formacao div,
   .projeto-container,
   .contato-formulario {
     width: 90%;
-  }
-
-  .hobbies-card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-around;
-    justify-items: center;
   }
 
   .projeto-container {
@@ -276,16 +238,6 @@ footer a {
 }
 
 @media screen and (max-width: 400px) {
-  .card {
-    height: 118px;
-    width: 156px;
-  }
-  .hobbies-card-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  #hobbies {
-    padding: 0 0 16px 0;
-  }
   #formacao h1,
   #projetos h1 {
     font-size: 22px;
