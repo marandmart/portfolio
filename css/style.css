@@ -4,8 +4,8 @@ body {
 }
 
 #top-nav,
-#apresentacao,
-#sobre-mim div,
+.apresentacao,
+.sobre-mim__conteudo,
 .skills-card-container,
 .hobbies-card-container,
 #formacao div,
@@ -14,32 +14,10 @@ body {
   width: 85%;
 }
 
-#sobre-mim {
-  background-color: #eaf2fd;
-  padding: 64px 0;
-}
-#sobre-mim div {
-  width: 85%;
-  margin: auto;
-}
-#sobre-mim h2 {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 50px;
-}
-#sobre-mim p {
-  line-height: 18.78px;
-  font-size: 16px;
-  font-weight: 400;
-  width: 70%;
-}
-
-#hobbies,
-#skills {
+#hobbies {
   padding: 40px 0;
 }
 
-#skills h1,
 #hobbies h1,
 #formacao h1 {
   padding: 32px 0;
@@ -47,7 +25,7 @@ body {
   font-size: 32px;
   text-align: center;
 }
-.skills-card-container,
+
 .hobbies-card-container {
   width: 85%;
   margin: auto;
@@ -256,18 +234,6 @@ footer a {
     width: 90%;
   }
 
-  #apresentacao h1 {
-    font-size: 22px;
-  }
-  #me {
-    max-width: 146px;
-    max-height: 146px;
-  }
-  #sobre-mim p {
-    width: 100%;
-  }
-
-  .skills-card-container,
   .hobbies-card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -307,44 +273,27 @@ footer a {
   .contato-formulario {
     align-items: stretch;
   }
+}
 
-  @media screen and (max-width: 400px) {
-    #top-nav a {
-      font-weight: 700;
-      font-size: 16px;
-    }
-    #top-nav nav a:last-child {
-      margin-left: 10px;
-      font-weight: 400;
-      font-size: 14px;
-    }
-    #apresentacao {
-      flex-direction: column-reverse;
-      align-items: flex-start;
-    }
-    .apresentacao-imagem {
-      padding-bottom: 16px;
-    }
-    .card {
-      height: 118px;
-      width: 156px;
-    }
-    .skills-card-container,
-    .hobbies-card-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    #hobbies {
-      padding: 0 0 16px 0;
-    }
-    #formacao h1,
-    #projetos h1 {
-      font-size: 22px;
-      font-weight: 700;
-    }
-    .card-formacao img + span {
-      font-size: 16px;
-      font-weight: 700;
-      text-align: center;
-    }
+@media screen and (max-width: 400px) {
+  .card {
+    height: 118px;
+    width: 156px;
+  }
+  .hobbies-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #hobbies {
+    padding: 0 0 16px 0;
+  }
+  #formacao h1,
+  #projetos h1 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .card-formacao img + span {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
   }
 }
