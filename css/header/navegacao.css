@@ -34,6 +34,12 @@
   .navegacao {
     width: var(--largura-mobile);
   }
+  .navegacao__nome {
+    width: 50%;
+  }
+  .navegacao__links {
+    width: 50%;
+  }
   .navegacao__links__link {
     display: none;
   }
@@ -44,17 +50,16 @@
 
 @media screen and (max-width: 400px) {
   .navegacao__nome__icone {
-    padding-right: 5px;
-    max-height: 18px;
+    padding-right: 2px;
+    max-height: 14px;
   }
 
   .navegacao__nome__texto {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .navegacao__links__link:last-child {
-    margin-left: 10px;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
   }
 }

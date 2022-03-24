@@ -33,17 +33,24 @@
   .apresentacao__conteudo__titulo {
     font-size: 22px;
   }
+  .apresentacao__conteudo {
+    width: 70%;
+  }
   .apresentacao__imagem {
     max-width: 146px;
     max-height: 146px;
     margin-left: 32px;
+    width: 30%;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .apresentacao__conteudo {
+  .apresentacao {
     flex-direction: column-reverse;
     align-items: flex-start;
+  }
+  .apresentacao__conteudo {
+    width: 100%;
   }
   .apresentacao__imagem {
     margin: 0 0 16px 0;

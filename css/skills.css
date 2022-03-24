@@ -13,13 +13,14 @@
   width: var(--largura-large);
   margin: auto;
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: calc(10% / 5);
+  flex-wrap: wrap;
 }
 
 .skills__container__card {
   height: 175px;
-  width: 175px;
+  width: 15%;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -40,15 +41,19 @@
 @media screen and (max-width: 850px) {
   .skills__container {
     width: var(--largura-mobile);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-around;
-    justify-items: center;
+    gap: 5%;
+  }
+  .skills__container__card {
+    width: 30%;
+    margin-bottom: 2rem;
   }
 }
 
 @media screen and (max-width: 400px) {
   .skills__container {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 10%;
+  }
+  .skills__container__card {
+    width: 45%;
   }
 }

@@ -14,10 +14,10 @@
   margin-bottom: 53.5px;
 }
 .projetos__container .projetos__container__imagem {
-  width: 70%;
+  width: 60%;
 }
 .projetos__container .projetos__container__info {
-  width: 30%;
+  width: 40%;
   margin-left: 26px;
 }
 .projetos__container:nth-child(2n + 1) {
@@ -62,7 +62,7 @@
     width: var(--largura-mobile);
   }
   .projetos__container .projetos__container__imagem,
-  .projetos__container .projeto__container__info {
+  .projetos__container .projetos__container__info {
     width: 100%;
     margin-left: 0;
   }
