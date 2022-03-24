@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="css/sobre-mim.css" />
     <link rel="stylesheet" href="css/skills.css" />
     <link rel="stylesheet" href="css/hobbies.css" />
+    <link rel="stylesheet" href="css/formacao.css" />
+    <link rel="stylesheet" href="css/projetos.css" />
+    <link rel="stylesheet" href="css/contato.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <title>Mário André Martins</title>
   </head>
   <body>
@@ -148,10 +152,10 @@
           </div>
         </div>
       </section>
-      <section id="formacao">
-        <h1>Formação Acadêmica</h1>
-        <div>
-          <div class="card-formacao">
+      <section id="formacao" class="formacao">
+        <h1 class="formacao__titulo">Formação Acadêmica</h1>
+        <div class="formacao__container">
+          <div class="formacao__container__card">
             <img
               src="assets/formacao/ufal.png"
               alt="brasão universidade federal de alagoas"
@@ -159,7 +163,7 @@
             <span>Engenharia Civil</span>
             <span>2012 - 2018</span>
           </div>
-          <div class="card-formacao">
+          <div class="formacao__container__card">
             <img
               src="assets/formacao/unit.jpg"
               alt="brasão universidade tiradentes"
@@ -169,16 +173,16 @@
           </div>
         </div>
       </section>
-      <section id="projetos">
-        <h1>Experiência Profissional</h1>
-        <div class="projeto-container">
-          <div class="projeto-imagem">
+      <section id="projetos" class="projetos">
+        <h1 class="projetos__titulo">Experiência Profissional</h1>
+        <div class="projetos__container">
+          <div class="projetos__container__imagem">
             <img
               src="assets/projetos/codificador.png"
               alt="imagem da tela do site do projeto decodificador de textos"
             />
           </div>
-          <div class="projeto-info">
+          <div class="projetos__container__info">
             <h2>Decodificador de texto</h2>
             <p>Challenge Alura Codificador</p>
             <a href="https://github.com/marandmart/alura-oracle-challenge-1"
@@ -189,14 +193,14 @@
             >
           </div>
         </div>
-        <div class="projeto-container">
-          <div class="projeto-imagem">
+        <div class="projetos__container">
+          <div class="projetos__container__imagem">
             <img
               src="assets/projetos/forca.png"
               alt="imagem da tela do site do projeto jogo da forca"
             />
           </div>
-          <div class="projeto-info">
+          <div class="projetos__container__info">
             <h2>Jogo criado com HTML, CSS e JavaScript</h2>
             <p>Challenge Oracle</p>
             <a href="https://github.com/marandmart/alura-oracle-challenge-2"
@@ -207,14 +211,14 @@
             >
           </div>
         </div>
-        <div class="projeto-container">
-          <div class="projeto-imagem">
+        <div class="projetos__container">
+          <div class="projetos__container__imagem">
             <img
               src="assets/projetos/netgames.png"
               alt="imagem da tela do site do clone da página da netflix"
             />
           </div>
-          <div class="projeto-info">
+          <div class="projetos__container__info">
             <h2>Projeto criado com HTML, CSS e JavaScript</h2>
             <p>Challenge DIO</p>
             <a href="https://github.com/marandmart/DIO-Netflix-Clone"
@@ -223,14 +227,14 @@
             <a href="https://netgames.netlify.app">Ver demo</a>
           </div>
         </div>
-        <div class="projeto-container">
-          <div class="projeto-imagem">
+        <div class="projetos__container">
+          <div class="projetos__container__imagem">
             <img
               src="assets/projetos/imersao-nextjs.png"
               alt="imagem da tela do site do clone da página da netflix"
             />
           </div>
-          <div class="projeto-info">
+          <div class="projetos__container__info">
             <h2>Projeto criado com NextJS</h2>
             <p>Imersão NextJS da Alura</p>
             <a href="https://github.com/marandmart/somediscordclone"
@@ -240,19 +244,20 @@
           </div>
         </div>
       </section>
-      <section id="contato">
-        <div class="contato-container">
-          <div class="contato-imagem">
+      <section class="contato">
+        <div class="contato__container">
+          <div class="contato__container__imagem">
             <img src="assets/email.png" alt="icone de um email sendo enviado" />
           </div>
-          <div class="contato-formulario">
-            <h1>Contato</h1>
-            <p>Quer entrar em contato comigo?</p>
-            <p>
+          <div class="contato__container__chamada">
+            <h1 class="contato__container__chamada__titulo">Contato</h1>
+            <p class="contato__container__chamada__texto">Quer entrar em contato comigo?</p>
+            <p class="contato__container__chamada__texto">
               Preencha o formulário e eu entrarei em contato com você o mais
               rápido possível
             </p>
-            <form action="" class="formulario">
+          </div>
+          <form action="" class="contato__container__formulario">
               <label for="nome" class="label-nome"
                 >Nome:
                 <input type="text" name="nome" id="nome" />
@@ -270,12 +275,11 @@
                 <textarea name="mensagem" id="mensagem"></textarea>
               </label>
               <input type="submit" value="Enviar Mensagem" class="btn-submit" />
-            </form>
-          </div>
+          </form>
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="rodape">
       <p>Desenvolvido por Mário André Martins</p>
       <p>2022</p>
       <br />

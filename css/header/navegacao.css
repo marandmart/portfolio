@@ -1,6 +1,6 @@
 .navegacao {
   padding: 50px 0;
-  width: 85%;
+  width: var(--largura-large);
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -31,6 +31,9 @@
 }
 
 @media screen and (max-width: 850px) {
+  .navegacao {
+    width: var(--largura-mobile);
+  }
   .navegacao__links__link {
     display: none;
   }

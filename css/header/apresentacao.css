@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 32px;
+  width: var(--largura-large);
 }
 .apresentacao__conteudo__titulo {
   font-weight: 700;
@@ -26,6 +27,9 @@
 }
 
 @media screen and (max-width: 850px) {
+  .apresentacao {
+    width: var(--largura-mobile);
+  }
   .apresentacao__conteudo__titulo {
     font-size: 22px;
   }

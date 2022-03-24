@@ -10,6 +10,7 @@
 }
 
 .hobbies__container {
+  width: var(--largura-large);
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -38,6 +39,7 @@
 
 @media screen and (max-width: 850px) {
   .hobbies__container {
+    width: var(--largura-mobile);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;

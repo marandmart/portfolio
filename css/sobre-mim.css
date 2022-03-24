@@ -4,6 +4,7 @@
 }
 .sobre-mim__conteudo {
   margin: auto;
+  width: var(--largura-large);
 }
 .sobre-mim__conteudo__titulo {
   font-weight: 700;
@@ -24,6 +25,9 @@
 }
 
 @media screen and (max-width: 850px) {
+  .sobre-mim__conteudo {
+    width: var(--largura-mobile);
+  }
   .sobre-mim__conteudo__texto {
     width: 100%;
   }
