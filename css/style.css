@@ -1,6 +1,7 @@
 :root {
   --largura-large: 85%;
   --largura-mobile: 90%;
+  --cor-de-fundo-alternada: #eaf2fd;
 }
 
 body {

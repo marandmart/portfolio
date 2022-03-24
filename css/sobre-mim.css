@@ -1,5 +1,5 @@
 .sobre-mim {
-  background-color: #eaf2fd;
+  background-color: var(--cor-de-fundo-alternada);
   padding: 64px 0;
 }
 .sobre-mim__conteudo {

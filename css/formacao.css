@@ -1,5 +1,5 @@
 .formacao {
-  background-color: #eaf2fd;
+  background-color: var(--cor-de-fundo-alternada);
   padding-bottom: 82px;
 }
 
