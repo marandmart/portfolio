@@ -1,6 +1,6 @@
 .contato {
   background-color: var(--cor-de-fundo-alternada);
-  padding: 50px 0;
+  padding: 129.5px 0 65.5px;
 }
 .contato__container {
   display: grid;
@@ -60,13 +60,18 @@
 }
 
 @media screen and (max-width: 850px) {
-  .contato__container__imagem {
-    display: none;
+  .contato {
+    padding: 32px 0;
   }
   .contato__container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     width: var(--largura-mobile);
     gap: 0;
+  }
+  .contato__container__imagem {
+    display: none;
   }
   .contato__container__formulario {
     align-items: stretch;

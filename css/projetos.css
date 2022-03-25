@@ -11,12 +11,47 @@
   margin: auto;
   display: flex;
   align-items: center;
-  margin-bottom: 53.5px;
+  margin-bottom: 4rem;
 }
-.projetos__container .projetos__container__imagem {
+.projetos__container:last-child {
+  margin-bottom: 2rem;
+}
+.projetos__container__imagem {
   width: 60%;
+  height: 360px;
 }
-.projetos__container .projetos__container__info {
+.projetos__container__imagem--codificador {
+  background: url("../assets/projetos/codificador.png") center / contain
+    no-repeat;
+}
+.projetos__container__imagem--forca {
+  background: url("../assets/projetos/forca.png") center / contain no-repeat;
+}
+.projetos__container__imagem--netgames {
+  background: url("../assets/projetos/netgames.png") center / contain no-repeat;
+}
+.projetos__container__imagem--discordclone {
+  background: url("../assets/projetos/imersao-nextjs.png") center / contain
+    no-repeat;
+}
+.projetos__container__imagem--react-weather {
+  background: url("../assets/projetos/react-weather-app.png") center / contain
+    no-repeat;
+}
+.projetos__container__imagem--codificador,
+.projetos__container__imagem--forca {
+  height: 29vw;
+}
+.projetos__container__imagem--netgames,
+.projetos__container__imagem--react-weather {
+  height: 32vw;
+}
+
+.projetos__container__imagem--discordclone {
+  height: 30vw;
+}
+
+.projetos__container__info {
   width: 40%;
   margin-left: 26px;
 }
@@ -61,11 +96,23 @@
     align-items: flex-start;
     width: var(--largura-mobile);
   }
-  .projetos__container .projetos__container__imagem,
-  .projetos__container .projetos__container__info {
+  .projetos__container__imagem,
+  .projetos__container__info {
     width: 100%;
     margin-left: 0;
   }
+  .projetos__container__imagem--codificador,
+  .projetos__container__imagem--forca {
+    height: 51vw;
+  }
+  .projetos__container__imagem--netgames,
+  .projetos__container__imagem--react-weather {
+    height: 57vw;
+  }
+  .projetos__container__imagem--discordclone {
+    height: 53vw;
+  }
+
   .projetos__container:nth-child(2n + 1) {
     flex-direction: column;
     align-items: flex-start;

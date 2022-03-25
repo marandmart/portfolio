@@ -1,5 +1,5 @@
 .hobbies {
-  padding: 40px 0;
+  padding: 40px 0 88px;
 }
 
 .hobbies__titulo {
@@ -28,7 +28,7 @@
   border-radius: 10px;
 }
 
-.hobbies__container__card img {
+.hobbies__container__card__icone {
   max-width: 50px;
   max-height: 50px;
   margin-left: 20px;
@@ -39,6 +39,9 @@
 }
 
 @media screen and (max-width: 850px) {
+  .hobbies {
+    padding: 0;
+  }
   .hobbies__container {
     width: var(--largura-mobile);
     gap: 5%;

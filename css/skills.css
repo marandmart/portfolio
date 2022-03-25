@@ -28,7 +28,7 @@
   border-radius: 10px;
 }
 
-.skills__container__card img {
+.skills__container__card__icone {
   max-width: 50px;
   max-height: 50px;
   margin-left: 20px;
@@ -39,6 +39,9 @@
 }
 
 @media screen and (max-width: 850px) {
+  .skills {
+    padding: 0;
+  }
   .skills__container {
     width: var(--largura-mobile);
     gap: 5%;

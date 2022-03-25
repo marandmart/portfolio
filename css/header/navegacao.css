@@ -1,5 +1,5 @@
 .navegacao {
-  padding: 50px 0;
+  padding: 50px 0 66.5px;
   width: var(--largura-large);
   margin: auto;
   display: flex;
@@ -33,12 +33,20 @@
 @media screen and (max-width: 850px) {
   .navegacao {
     width: var(--largura-mobile);
+    padding: 50px 0 58.5px;
   }
   .navegacao__nome {
     width: 50%;
+    display: flex;
+  }
+  .navegacao__nome__icone {
+    max-height: 16px;
   }
   .navegacao__links {
     width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
   .navegacao__links__link {
     display: none;
@@ -49,11 +57,17 @@
 }
 
 @media screen and (max-width: 400px) {
+  .navegacao {
+    padding: 18.5px 0 34.5px;
+  }
+  .navegacao__nome {
+    justify-content: flex-start;
+    align-items: center;
+  }
   .navegacao__nome__icone {
     padding-right: 2px;
     max-height: 14px;
   }
-
   .navegacao__nome__texto {
     font-size: 12px;
   }
