@@ -1,10 +1,10 @@
 .rodape {
   padding: 32px 0;
 }
-.rodape p {
+.rodape__texto {
   text-align: center;
 }
-.rodape a {
+.rodape__credito-icones {
   text-decoration: none;
   display: block;
   text-align: center;

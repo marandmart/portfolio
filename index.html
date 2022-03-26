@@ -256,21 +256,21 @@
             </p>
           </div>
           <form action="" class="contato__container__formulario">
-              <label for="nome" class="label-nome"
+              <label for="nome" class="contato__container__formulario__label"
                 >Nome:
-                <input type="text" name="nome" id="nome" maxlength="50" required oninvalid="this.setCustomValidity('Digite o seu nome')" oninput="this.setCustomValidity('')"/>
+                <input type="text" name="nome" id="nome" maxlength="50" class="contato__container__formulario__input" required oninvalid="this.setCustomValidity('Digite o seu nome')" oninput="this.setCustomValidity('')"/>
               </label>
-              <label for="email"
+              <label for="email" class="contato__container__formulario__label"
                 >Email:
-                <input type="email" name="email" id="email" required />
+                <input type="email" name="email" id="email" class="contato__container__formulario__input" required />
               </label>
-              <label for="assunto"
+              <label for="assunto" class="contato__container__formulario__label"
                 >Assunto:
-                <input type="text" name="assunto" id="assunto" required maxlength="50" />
+                <input type="text" name="assunto" id="assunto" class="contato__container__formulario__input" required maxlength="50" />
               </label>
-              <label for="mensagem"
+              <label for="mensagem" class="contato__container__formulario__label"
                 >Mensagem:
-                <textarea name="mensagem" id="mensagem" required maxlength="300"></textarea>
+                <textarea name="mensagem" id="mensagem" class="contato__container__formulario__textarea" required maxlength="300"></textarea>
               </label>
               <input type="submit" value="Enviar Mensagem" class="btn-submit" />
           </form>
@@ -278,10 +278,10 @@
       </section>
     </main>
     <footer class="rodape">
-      <p>Desenvolvido por Mário André Martins</p>
-      <p>2022</p>
+      <p class="rodape__texto">Desenvolvido por Mário André Martins</p>
+      <p class="rodape__texto">2022</p>
       <br />
-      <a href="https://www.flaticon.com/free-icons/mail" title="mail icons"
+      <a href="https://www.flaticon.com/free-icons/mail" title="mail icons" class="rodape__credito-icones"
         >Mail icons created by Freepik - Flaticon</a
       >
     </footer>

@@ -34,7 +34,7 @@
   display: flex;
   flex-direction: column;
 }
-.contato__container__formulario label {
+.contato__container__formulario__label {
   margin: 32px 0 0 0;
   display: block;
   box-sizing: border-box;
@@ -43,14 +43,14 @@
   border: 1px solid black;
   background-color: white;
 }
-.contato__container__formulario input {
+.contato__container__formulario__input {
   line-height: 20px;
   font-weight: 400;
   font-size: 16px;
   border: none;
   width: 100%;
 }
-.contato__container__formulario textarea {
+.contato__container__formulario__textarea {
   resize: none;
   height: 133px;
   width: 100%;
