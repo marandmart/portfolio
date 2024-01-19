@@ -1,0 +1,20 @@
+# .gitignore
+
+# Virtual environment
+venv/
+
+# Database
+db.sqlite3
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.pyc
+*.pyo
+__pycache__/
+
+# Log files
+*.log
+
+# Configuration files
+.env
