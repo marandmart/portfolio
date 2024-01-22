@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Andre Martins Portfolio</title>
+</head>
+<body>
+    <h1>Welcome to Your App</h1>
+
+    {% for data in info %}
+        <div>
+            <h2>{{ data.site_owner }}</h2>
+            <p>{{ data.presentation_header }}</p>
+            <p>{{ data.about_me }}</p>
+            <p>{{ data.credits }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
