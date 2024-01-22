@@ -21,6 +21,10 @@ class AcademicHistory(models.Model):
 
     def __str__(self):
         return self.institution_name
+    
+    class Meta:
+        verbose_name = "Academic History"
+        verbose_name_plural = "Academic History"
 
 class Certificate(models.Model):
     certificate_name = models.CharField(max_length=255)

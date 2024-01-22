@@ -26,6 +26,21 @@ class PortfolioSiteAdmin(admin.ModelAdmin):
     list_display = ('site_owner', 'presentation_header')
     search_fields = ('site_owner',)
     filter_horizontal = ('projects_built', 'academic_history', 'certificates', 'professional_experience')
+    change_form_template = "admin/portfolio_site_change_form.html"
+
+    def response_add(self, request, obj, post_url_continue=None):
+        return self.response_post_save_add(request, obj)
+
+    def response_change(self, request, obj):
+        return self.response_post_save_change(request, obj)
+
+    def response_post_save_add(self, request, obj):
+        # Redirect to the change form for the new object
+        return super().response_post_save_add(request, obj)
+
+    def response_post_save_change(self, request, obj):
+        # Redirect to the change form for the same object
+        return super().response_post_save_change(request, obj)
 
     # Se existe um site criado, se remove a possibilidade de criar outro
     def has_add_permission(self, request):
