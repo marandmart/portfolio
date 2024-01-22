@@ -12,6 +12,7 @@ db.sqlite3
 *.pyc
 *.pyo
 __pycache__/
+**/migrations/
 
 # Log files
 *.log
