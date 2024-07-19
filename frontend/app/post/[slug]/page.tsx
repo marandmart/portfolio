@@ -15,42 +15,10 @@ const query = gql`
   }
 `;
 
-interface Span {
-  marks: string[];
-  text: string;
-  _key: string;
-  _type: string;
-}
-
-interface Block {
-  markDefs: any[];
-  children: Span[];
-  _type: string;
-  style: string;
-  _key: string;
-}
-
-interface Author {
-  __typename: string;
-  name: string;
-}
-
-interface Post {
-  __typename: string;
-  title: string;
-  author: Author;
-  publishedAt: string;
-  bodyRaw: Block[];
-}
-
-interface AllPost {
-  allPost: Post[];
-}
-
 const Post = ({ params: { slug = "" } }) => {
   const { loading, error, data } = useQuery(query, { variables: { slug } });
 
-  const { allPost } = data as AllPost;
+  const { allPost } = data;
   const {
     title = "",
     author: { name = "" } = {},
