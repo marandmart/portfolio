@@ -5,9 +5,9 @@ export default defineCliConfig({
     projectId: 'r62icpp0',
     dataset: 'production'
   },
-  graphql: [{
-    playground: true,
-    workspace: 'production',
-    id: 'r62icpp0'
-  }]
+  /**
+   * Enable auto-updates for studios.
+   * Learn more at https://www.sanity.io/docs/cli#auto-updates
+   */
+  autoUpdates: true,
 })

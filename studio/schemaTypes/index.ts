@@ -1,6 +1,6 @@
-import blockContent from './blockContent'
-import category from './category'
-import post from './post'
-import author from './author'
+import blockContent from './blockContent/blockContent'
+import blogBlockContent from './blockContent/blogBlockContent'
+import blogPost from './blogPost'
+import project from './project' // Import the new schema
 
-export const schemaTypes = [post, author, category, blockContent]
+export const schemaTypes = [project, blogPost, blockContent, blogBlockContent] // Add it to the array
