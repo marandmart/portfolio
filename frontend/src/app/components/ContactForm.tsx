@@ -41,7 +41,7 @@ export const ContactForm = () => {
       <div>
         <label htmlFor="email">Email</label>
         <input
-          type="text"
+          type="email"
           id="email"
           name="email"
           required
@@ -50,11 +50,11 @@ export const ContactForm = () => {
       </div>
       <div>
         <label htmlFor="message">Message</label>
-        <input
-          type="text"
+        <textarea
           id="message"
           name="message"
           required
+          rows={4}
           className="border rounded-lg w-full p-2"
         />
       </div>

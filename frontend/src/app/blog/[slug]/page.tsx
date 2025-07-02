@@ -1,6 +1,7 @@
 import { sanityGraphqlRequest } from "@/lib/sanity.graphql";
 import { PortableText } from "@portabletext/react";
 import type { PortableTextBlock } from "@portabletext/types";
+import { notFound } from "next/navigation";
 
 interface BlogPost {
   title: string;
@@ -20,14 +21,11 @@ const blogPostQuery = `
     }
 `;
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
+type Params = Promise<{ slug: string }>;
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params;
+export default async function BlogPostPage(props: { params: Params }) {
+  const { slug } = await props.params;
+
   const data = await sanityGraphqlRequest<SanityBlogPostResponse>(
     blogPostQuery,
     { slug }
@@ -35,7 +33,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const blogPost: BlogPost | undefined = data?.allBlogPost?.[0];
 
   if (!blogPost) {
-    return <div>Blog post not found</div>;
+    return notFound();
   }
 
   return (

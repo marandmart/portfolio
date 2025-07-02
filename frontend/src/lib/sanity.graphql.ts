@@ -7,10 +7,10 @@ export async function sanityGraphqlRequest<T>(
   query: string,
   variables: Record<string, unknown> = {}
 ): Promise<T | null> {
-  const SANITY_GRAPHQL_URL = process.env.NEXT_PUBLIC_SANITY_GRAPHQL_URL;
+  const SANITY_GRAPHQL_URL = process.env.SANITY_GRAPHQL_URL;
 
   if (!SANITY_GRAPHQL_URL) {
-    throw new Error("NEXT_PUBLIC_SANITY_GRAPHQL_URL is not defined");
+    throw new Error("SANITY_GRAPHQL_URL is not defined");
   }
 
   try {

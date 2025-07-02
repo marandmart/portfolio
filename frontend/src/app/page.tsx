@@ -4,6 +4,7 @@
 
 import { sanityGraphqlRequest } from "@/lib/sanity.graphql";
 import { ContactForm } from "./components/ContactForm";
+import Link from "next/link";
 
 // Define the type for a project based on our schema
 interface Project {
@@ -101,14 +102,14 @@ export default async function HomePage() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {blogPosts.map((blogPost) => (
-          <a
+          <Link
             key={blogPost._id}
             className="border rounded-lg p-6"
             href={`/blog/${blogPost.slug.current}`}
           >
             <h2 className="text-2xl font-semibold mb-2">{blogPost.title}</h2>
             <div className="text-white">{blogPost.shortDescription}</div>
-          </a>
+          </Link>
         ))}
       </div>
       <ContactForm />
