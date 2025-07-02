@@ -1,0 +1,69 @@
+"use client";
+
+import { useFormStatus } from "react-dom";
+import { submitContactForm } from "@/app/actions";
+import { useActionState } from "react";
+
+const initialState = {
+  message: "",
+  success: false,
+  submissionCount: 0,
+};
+
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="bg-blue-500 text-white p-2 rounded-lg disabled:bg-gray-400"
+    >
+      {pending ? "Submitting..." : "Send Message"}
+    </button>
+  );
+};
+
+export const ContactForm = () => {
+  const [state, formAction] = useActionState(submitContactForm, initialState);
+
+  return (
+    <form action={formAction} className="space-y-4">
+      <div>
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          className="border rounded-lg w-full p-2"
+        />
+      </div>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          required
+          className="border rounded-lg w-full p-2"
+        />
+      </div>
+      <div>
+        <label htmlFor="message">Message</label>
+        <input
+          type="text"
+          id="message"
+          name="message"
+          required
+          className="border rounded-lg w-full p-2"
+        />
+      </div>
+      <SubmitButton />
+      {state.message && (
+        <p className={state.success ? "text-green-600" : "text-red-600"}>
+          {state.message}
+        </p>
+      )}
+    </form>
+  );
+};

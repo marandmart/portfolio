@@ -3,7 +3,10 @@
  * @param query The GraphQL query string
  * @returns The `data` object from the GraphQL response
  */
-export async function sanityGraphqlRequest(query: string) {
+export async function sanityGraphqlRequest<T>(
+  query: string,
+  variables: Record<string, unknown> = {}
+): Promise<T | null> {
   const SANITY_GRAPHQL_URL = process.env.NEXT_PUBLIC_SANITY_GRAPHQL_URL;
 
   if (!SANITY_GRAPHQL_URL) {
@@ -16,7 +19,7 @@ export async function sanityGraphqlRequest(query: string) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, variables }),
       next: { revalidate: 60 },
     });
 
@@ -24,7 +27,7 @@ export async function sanityGraphqlRequest(query: string) {
       throw new Error(`GraphQL request failed: ${response.statusText}`);
     }
 
-    const { data } = await response.json();
+    const { data }: { data: T } = await response.json();
     return data;
   } catch (error) {
     console.error("There was an error with the GraphQL request:", error);

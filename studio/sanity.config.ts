@@ -2,7 +2,8 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
-import { codeInput } from '@sanity/code-input'
+import {codeInput} from '@sanity/code-input'
+import {graphiQLTool} from 'sanity-plugin-graphiql'
 
 export default defineConfig({
   name: 'default',
@@ -11,7 +12,17 @@ export default defineConfig({
   projectId: 'r62icpp0',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool(), codeInput()],
+  plugins: [
+    codeInput(),
+    
+    structureTool(),
+    visionTool(),
+    graphiQLTool({
+      name: 'graphql',
+      title: 'GraphQL API',
+      apiVersion: '2023-08-01',
+    }),
+  ],
 
   schema: {
     types: schemaTypes,
