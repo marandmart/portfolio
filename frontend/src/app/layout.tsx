@@ -36,9 +36,9 @@ export default function RootLayout({
         <nav className="flex justify-between p-4">
           <Link href="/" className="link-underline">Mario Martins</Link>
           <ul className="flex gap-2">
-            <li className="inline-block">
+            {/* <li className="inline-block">
               <Link href="/blog" className="link-underline">Blog</Link>
-            </li>
+            </li> */}
             <li className="inline-block">
               <Link href="#projects" className="link-underline">Projects</Link>
             </li>
