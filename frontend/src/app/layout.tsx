@@ -37,13 +37,13 @@ export default function RootLayout({
           <Link href="/" className="link-underline">Mario Martins</Link>
           <ul className="flex gap-2">
             <li className="inline-block">
-              <Link href="/blog">Blog</Link>
+              <Link href="/blog" className="link-underline">Blog</Link>
             </li>
             <li className="inline-block">
-              <Link href="#projects">Projects</Link>
+              <Link href="#projects" className="link-underline">Projects</Link>
             </li>
             <li className="inline-block">
-              <Link href="#contact">Contact</Link>
+              <Link href="#contact" className="link-underline">Contact</Link>
             </li>
           </ul>
         </nav>
