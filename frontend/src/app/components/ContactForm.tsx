@@ -28,6 +28,7 @@ export const ContactForm = () => {
 
   return (
     <form action={formAction} className="space-y-4">
+      <h2>Get In Touch!</h2>
       <div>
         <label htmlFor="name">Name</label>
         <input

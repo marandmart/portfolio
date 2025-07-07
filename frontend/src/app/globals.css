@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --background-color: #111827;
+  --background-image: radial-gradient(circle at top left, #1f2937, #111827);
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
 }
 
 @theme inline {
@@ -19,8 +26,24 @@
   }
 }
 
+@layer components {
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    @apply content-[''] absolute bottom-0 left-0 h-[2px] w-full;
+    @apply bg-current scale-x-0 origin-left transition-transform;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+}
+
 body {
-  background: var(--background);
+  background: var(--background-color);
+  background-image: var(--background-image);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

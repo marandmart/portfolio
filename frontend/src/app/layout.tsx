@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import Image from "next/image";
+import GithubIcon from "../../public/github.svg";
+import LinkedInIcon from "../../public/linkedin.svg";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ibmPlexSans = IBM_Plex_Sans({
+  variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
+  weight: "100"
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
+  weight: "100"
 });
 
 export const metadata: Metadata = {
@@ -25,9 +31,54 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} antialiased`}
       >
+        <nav className="flex justify-between p-4">
+          <Link href="/" className="link-underline">Mario Martins</Link>
+          <ul className="flex gap-2">
+            <li className="inline-block">
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li className="inline-block">
+              <Link href="#projects">Projects</Link>
+            </li>
+            <li className="inline-block">
+              <Link href="#contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
         {children}
+        <footer className="p-4 flex justify-between">
+          <p>&copy; 2025 Mario Andre Martins</p>
+          <ul className="flex flex-row gap-2">
+            <li>
+              <Link
+                href={"https://www.github.com/marandmart/"}
+                target={"_blank"}
+              >
+                <Image
+                  src={GithubIcon}
+                  alt={"Github Icon"}
+                  width={24}
+                  height={24}
+                />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"https://www.linkedin.com/in/mario-andre-martins/"}
+                target={"_blank"}
+              >
+                <Image
+                  src={LinkedInIcon}
+                  alt={"LinkedIn Icon"}
+                  width={24}
+                  height={24}
+                />
+              </Link>
+            </li>
+          </ul>
+        </footer>
       </body>
     </html>
   );

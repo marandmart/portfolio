@@ -15,7 +15,16 @@ export default defineConfig({
   plugins: [
     codeInput(),
     
-    structureTool(),
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title('Mario\'s Portfolio Content')
+          .id('content-list-pane')
+          .items([
+            S.documentTypeListItem('project').title('Projects'),
+            S.documentTypeListItem('blogPost').title('Blog Posts'),
+          ])
+    }),
     visionTool(),
     graphiQLTool({
       name: 'graphql',
