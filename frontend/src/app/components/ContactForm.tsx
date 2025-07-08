@@ -16,7 +16,7 @@ const SubmitButton = () => {
     <button
       type="submit"
       disabled={pending}
-      className="bg-blue-500 text-white p-2 rounded-lg disabled:bg-gray-400"
+      className="bg-blue-500 text-white p-2 rounded-lg disabled:bg-gray-400 hover:bg-blue-400 hover:cursor-pointer"
     >
       {pending ? "Submitting..." : "Send Message"}
     </button>
@@ -27,8 +27,8 @@ export const ContactForm = () => {
   const [state, formAction] = useActionState(submitContactForm, initialState);
 
   return (
-    <form action={formAction} className="space-y-4">
-      <h2>Get In Touch!</h2>
+    <form action={formAction} className="space-y-4 max-w-2xl mx-auto mt-4">
+      <h2 className="text-4xl font-semibold mb-2">Get In Touch!</h2>
       <div>
         <label htmlFor="name">Name</label>
         <input

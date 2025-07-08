@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Epilogue } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import GithubIcon from "../../public/github.svg";
 import LinkedInIcon from "../../public/linkedin.svg";
 
-const ibmPlexSans = IBM_Plex_Sans({
-  variable: "--font-ibm-plex-sans",
+const epilogue = Epilogue({
+  variable: "--font-epilogue",
   subsets: ["latin"],
-  weight: "100"
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: "100"
 });
 
 export const metadata: Metadata = {
@@ -29,21 +22,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} antialiased`}
-      >
-        <nav className="flex justify-between p-4">
-          <Link href="/" className="link-underline">Mario Martins</Link>
-          <ul className="flex gap-2">
+    <html lang="en" className="scroll-smooth">
+      <body className={`${epilogue.variable} antialiased relative`}>
+        <nav className="fixed top-0 left-0 w-full z-10 flex justify-between p-4 [background-image:var(--background-image)]">
+          <Link href="/" className="link-underline font-semibold">
+            Mario Martins
+          </Link>
+          <ul className="flex gap-4">
             {/* <li className="inline-block">
               <Link href="/blog" className="link-underline">Blog</Link>
             </li> */}
             <li className="inline-block">
-              <Link href="#projects" className="link-underline">Projects</Link>
+              <Link href="#about" className="link-underline font-medium">
+                About
+              </Link>
             </li>
             <li className="inline-block">
-              <Link href="#contact" className="link-underline">Contact</Link>
+              <Link href="#experience" className="link-underline font-medium">
+                Experience
+              </Link>
+            </li>
+            <li className="inline-block">
+              <Link href="#projects" className="link-underline font-medium">
+                Projects
+              </Link>
+            </li>
+            <li className="inline-block">
+              <Link href="#contact" className="link-underline font-medium">
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>

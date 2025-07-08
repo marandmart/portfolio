@@ -12,6 +12,12 @@ interface Project {
   mainImage: {
     asset: {
       url: string;
+      metadata: {
+        dimensions: {
+          width: number;
+          height: number;
+        };
+      };
     };
   };
 }
@@ -32,6 +38,12 @@ const homePageProjectQuery = `
       mainImage {
         asset {
           url
+          metadata {
+            dimensions {
+              width
+              height
+            }
+          }
         }
       }
     }
@@ -45,40 +57,43 @@ export default async function Projects() {
 
   return (
     <section
-      className="grid grid-cols-1 mb-8 md:grid-cols-2 gap-8"
+      className="flex flex-col gap-8 mb-16"
       id="projects"
     >
       <h2 className="text-4xl font-semibold mb-2">Projects</h2>
-      {projects.map((project) => {
-        return (
-          <div key={project._id} className="">
-            <Image
-              src={project.mainImage.asset.url}
-              alt={project.title}
-              width={500}
-              height={500}
-            />
-            <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-            <p>{project.shortDescription}</p>
-            <Link href={project.projectUrl} target="_blank" className="block">
-              See Live Demo
-            </Link>
-            <Link href={project.githubUrl} target="_blank" className="block">
-              See Source Code
-            </Link>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies?.map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        );
-      })}
+      <div className="grid gap-8 md:grid-cols-2">
+        {projects.map((project) => {
+          return ( 
+            <article key={project._id}>
+              <Image
+                src={project.mainImage.asset.url}
+                alt={project.title}
+                width={project.mainImage.asset.metadata.dimensions.width}
+                height={project.mainImage.asset.metadata.dimensions.height}
+                className="w-full h-auto rounded-lg"
+              />
+              <h3 className="text-2xl font-semibold mb-2 mt-2">{project.title}</h3>
+              <p className="mb-2">{project.shortDescription}</p>
+              <div className="flex flex-wrap gap-2 mb-2">
+                {project.technologies?.map((tech) => (
+                  <span
+                    key={tech}
+                    className="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <Link href={project.projectUrl} target="_blank" className="inline-block border-2 rounded-full border-white px-2 py-1 mr-2">
+                Live Demo
+              </Link>
+              <Link href={project.githubUrl} target="_blank" className="inline-block border-2 rounded-full border-white px-2 py-1">
+                Source Code
+              </Link>
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 }

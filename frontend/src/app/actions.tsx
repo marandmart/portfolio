@@ -1,11 +1,12 @@
 "use server";
 
 import nodemailer from "nodemailer";
+import { redis } from "@/lib/redis";
+import { headers } from "next/headers";
 
 type FormState = {
   success: boolean;
   message: string;
-  submissionCount: number;
 };
 
 const MAXIMUN_SUBMISSIONS = 3;
@@ -14,11 +15,15 @@ export async function submitContactForm(
   prevState: FormState,
   formData: FormData
 ) {
-  if (prevState.submissionCount >= MAXIMUN_SUBMISSIONS) {
+  const ip = (await headers()).get("x-forwarded-for");
+  const key = `contact_form_submission:${ip}`;
+
+  const currentSubmissions = (await redis.get<number>(key)) || 0;
+
+  if (currentSubmissions >= MAXIMUN_SUBMISSIONS) {
     return {
       success: false,
       message: "You have reached the maximum number of submissions.",
-      submissionCount: prevState.submissionCount,
     };
   }
 
@@ -30,7 +35,6 @@ export async function submitContactForm(
     return {
       success: false,
       message: "Please fill out all fields.",
-      submissionCount: prevState.submissionCount,
     };
   }
 
@@ -56,25 +60,27 @@ export async function submitContactForm(
       html: `
                 <p>You have a new contact form submission:</p>
                 <ul>
-                    <li><strong>Name:</strong> ${name}</li>
-                    <li><strong>Email:</strong> ${email}</li>
-                    <li><strong>Message:</strong></li>
-                    <p>${message}</p>
+                  <li><strong>Name:</strong> ${name}</li>
+                  <li><strong>Email:</strong> ${email}</li>
                 </ul>
+                <p><strong>Message:</strong></p>
+                <p>${message}</p>
             `,
     });
+
+    // expiration
+    const oneDayinSeconds = 60 * 60 * 24;
+    await redis.set(key, currentSubmissions + 1, { ex: oneDayinSeconds });
 
     return {
       success: true,
       message: "Your message has been sent successfully!",
-      submissionCount: prevState.submissionCount + 1,
     };
   } catch (error) {
     console.error("Failed to send email:", error);
     return {
       success: false,
       message: "Failed to send message. Please try again later.",
-      submissionCount: prevState.submissionCount + 1,
     };
   }
 }

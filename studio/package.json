@@ -16,12 +16,12 @@
   ],
   "dependencies": {
     "@sanity/code-input": "^5.1.2",
-    "@sanity/vision": "3.97.1",
+    "@sanity/vision": "3.98.0",
     "graphiql": "^5.0.2",
     "graphql": "^16.11.0",
     "react": "^19.1",
     "react-dom": "^19.1",
-    "sanity": "^3.97.1",
+    "sanity": "3.98.0",
     "sanity-plugin-graphiql": "^1.7.1",
     "styled-components": "^6.1.18"
   },
