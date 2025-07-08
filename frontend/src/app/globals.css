@@ -5,6 +5,7 @@
   --foreground: #171717;
   --background-color: #111827;
   --background-image: radial-gradient(circle at top left, #1f2937, #111827);
+  --text-color-default: #fff;
 
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -44,6 +45,6 @@
 body {
   background: var(--background-color);
   background-image: var(--background-image);
-  color: var(--foreground);
+  color: var(--text-color-default);
   font-family: Arial, Helvetica, sans-serif;
 }
