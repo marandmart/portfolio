@@ -32,6 +32,10 @@
   }
 }
 
+section {
+  scroll-margin-top: 56px;
+}
+
 .scrollbar-hide {
   /* Firefox */
   scrollbar-width: none;

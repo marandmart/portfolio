@@ -50,6 +50,7 @@ export default function RootLayout({
               >
                 <Image
                   src={LinkedInIcon}
+                  style={{ backgroundColor: "white", borderRadius: "8px" }}
                   alt={"LinkedIn Icon"}
                   width={24}
                   height={24}
