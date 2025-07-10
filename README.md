@@ -1,4 +1,4 @@
-Modern Developer Portfolio
+# My Developer Portfolio
 
 This is a responsive, modern software developer portfolio built with Next.js 15, React 19, and a Sanity.io headless CMS. It features a permanent dark theme with a radial gradient background, dynamic content management for projects and blog posts, and a secure, rate-limited contact form.
 
