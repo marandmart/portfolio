@@ -49,7 +49,7 @@ export default function NavBar() {
         {/* <li className="inline-block">
               <Link href="/blog" className="link-underline">Blog</Link>
             </li> */}
-        <li className="inline-block">
+        <li className="inline-block md:hidden">
           <Link href="#about" className="link-underline font-medium">
             About
           </Link>
