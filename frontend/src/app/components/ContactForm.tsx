@@ -10,21 +10,9 @@ const initialState = {
   submissionCount: 0,
 };
 
-const SubmitButton = () => {
-  const { pending } = useFormStatus();
-  return (
-    <button
-      type="submit"
-      disabled={pending}
-      className="bg-blue-500 text-white p-2 rounded-lg disabled:bg-gray-400 hover:bg-blue-400 hover:cursor-pointer"
-    >
-      {pending ? "Submitting..." : "Send Message"}
-    </button>
-  );
-};
-
 export const ContactForm = () => {
   const [state, formAction] = useActionState(submitContactForm, initialState);
+  const { pending } = useFormStatus();
 
   return (
     <form action={formAction} className="space-y-4 max-w-2xl mx-auto mt-4">
@@ -59,7 +47,13 @@ export const ContactForm = () => {
           className="border rounded-lg w-full p-2"
         />
       </div>
-      <SubmitButton />
+      <button
+        type="submit"
+        disabled={pending}
+        className="bg-white text-black p-2 rounded-lg disabled:bg-gray-400 hover:bg-blue-300 hover:cursor-pointer"
+      >
+        {pending ? "Submitting..." : "Send Message"}
+      </button>
       {state.message && (
         <p className={state.success ? "text-green-600" : "text-red-600"}>
           {state.message}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import GithubIcon from "../../public/github.svg";
 import LinkedInIcon from "../../public/linkedin.svg";
+import NavBar from "./components/NavBar";
 
 const epilogue = Epilogue({
   variable: "--font-epilogue",
@@ -24,38 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${epilogue.variable} antialiased relative`}>
-        <nav className="fixed top-0 left-0 w-full z-10 flex justify-between p-4 [background-image:var(--background-image)]">
-          <Link href="/" className="link-underline font-semibold">
-            Mario Martins
-          </Link>
-          <ul className="flex gap-4">
-            {/* <li className="inline-block">
-              <Link href="/blog" className="link-underline">Blog</Link>
-            </li> */}
-            <li className="inline-block">
-              <Link href="#about" className="link-underline font-medium">
-                About
-              </Link>
-            </li>
-            <li className="inline-block">
-              <Link href="#experience" className="link-underline font-medium">
-                Experience
-              </Link>
-            </li>
-            <li className="inline-block">
-              <Link href="#projects" className="link-underline font-medium">
-                Projects
-              </Link>
-            </li>
-            <li className="inline-block">
-              <Link href="#contact" className="link-underline font-medium">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <NavBar />
         {children}
-        <footer className="p-4 flex justify-between">
+        <footer className="p-4 flex justify-between items-center gap-2">
           <p>&copy; 2025 Mario Andre Martins</p>
           <ul className="flex flex-row gap-2">
             <li>

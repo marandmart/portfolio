@@ -84,7 +84,7 @@ export default async function Projects() {
                   </span>
                 ))}
               </div>
-              <Link href={project.projectUrl} target="_blank" className="inline-block border-2 rounded-full border-white px-2 py-1 mr-2">
+              <Link href={project.projectUrl} target="_blank" className="inline-block border-2 rounded-full border-white px-2 py-1 mb-2 mr-2">
                 Live Demo
               </Link>
               <Link href={project.githubUrl} target="_blank" className="inline-block border-2 rounded-full border-white px-2 py-1">
