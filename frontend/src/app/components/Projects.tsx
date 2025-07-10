@@ -17,6 +17,7 @@ interface Project {
           width: number;
           height: number;
         };
+        lqip: string;
       };
     };
   };
@@ -43,6 +44,7 @@ const homePageProjectQuery = `
               width
               height
             }
+            lqip
           }
         }
       }
@@ -57,7 +59,7 @@ export default async function Projects() {
 
   return (
     <section
-      className="flex flex-col gap-8 mb-16"
+      className="flex flex-col gap-8 mb-16 w-full"
       id="projects"
     >
       <h2 className="text-4xl font-semibold mb-2">Projects</h2>
@@ -70,6 +72,8 @@ export default async function Projects() {
                 alt={project.title}
                 width={project.mainImage.asset.metadata.dimensions.width}
                 height={project.mainImage.asset.metadata.dimensions.height}
+                placeholder="blur"
+                blurDataURL={project?.mainImage?.asset?.metadata?.lqip}
                 className="w-full h-auto rounded-lg"
               />
               <h3 className="text-2xl font-semibold mb-2 mt-2">{project.title}</h3>
