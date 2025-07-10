@@ -1,4 +1,4 @@
-import {defineConfig} from 'sanity'
+import {defineConfig, isDev} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
@@ -6,6 +6,12 @@ import {codeInput} from '@sanity/code-input'
 import {graphiQLTool} from 'sanity-plugin-graphiql'
 
 import './styles/studio-overrides.css'
+
+const devPlugins = isDev ? [graphiQLTool({
+      name: 'graphql',
+      title: 'GraphQL API',
+      apiVersion: '2023-08-01',
+    })] : [];
 
 export default defineConfig({
   name: 'default',
@@ -29,11 +35,7 @@ export default defineConfig({
           ])
     }),
     visionTool(),
-    graphiQLTool({
-      name: 'graphql',
-      title: 'GraphQL API',
-      apiVersion: '2023-08-01',
-    }),
+    ...devPlugins,
   ],
 
   schema: {
