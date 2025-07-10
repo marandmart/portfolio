@@ -1,0 +1,9 @@
+/*
+ * This targets the container of the field named 'current'
+ * and removes its border and background to make it blend in.
+*/
+[data-testid="boolean-input"] {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important; /* Also remove the focus shadow */
+}

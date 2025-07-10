@@ -8,7 +8,7 @@ import Hero from "./components/Hero";
 export default async function HomePage() {
 
   return (
-    <main className="max-w-7xl mx-auto p-8">
+    <main className="max-w-7xl mx-auto p-8 flex flex-wrap">
       <Hero />
       <About />
       <Experience />

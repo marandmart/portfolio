@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+@theme {
   --background: #ffffff;
   --foreground: #171717;
   --background-color: #111827;
@@ -11,9 +11,7 @@
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
-}
 
-@theme {
   --breakpoint-xs: 30.875rem;
 }
 
@@ -29,6 +27,18 @@
 
   .link-underline:hover::after {
     @apply scale-x-100;
+  }
+}
+
+@layer base {
+  section {
+    scroll-margin-top: 90px;
+  }
+
+  @media (min-width: theme('breakpoint-xs')) {
+    section {
+      scroll-margin-top: 56px;
+    }
   }
 }
 

@@ -15,7 +15,7 @@ export const ContactForm = () => {
   const { pending } = useFormStatus();
 
   return (
-    <form action={formAction} className="space-y-4 max-w-2xl mx-auto mt-4">
+    <form action={formAction} className="space-y-4 max-w-2xl mx-auto mt-4 w-full" id="contact">
       <h2 className="text-4xl font-semibold mb-2">Get In Touch!</h2>
       <div>
         <label htmlFor="name">Name</label>

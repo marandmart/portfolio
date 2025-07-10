@@ -5,6 +5,8 @@ import {schemaTypes} from './schemaTypes'
 import {codeInput} from '@sanity/code-input'
 import {graphiQLTool} from 'sanity-plugin-graphiql'
 
+import './styles/studio-overrides.css'
+
 export default defineConfig({
   name: 'default',
   title: 'portfolio',
@@ -21,6 +23,7 @@ export default defineConfig({
           .title('Mario\'s Portfolio Content')
           .id('content-list-pane')
           .items([
+            S.documentTypeListItem('experience').title('Experience'),
             S.documentTypeListItem('project').title('Projects'),
             S.documentTypeListItem('blogPost').title('Blog Posts'),
           ])
