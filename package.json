@@ -1,0 +1,11 @@
+{
+  "name": "portfolio_project",
+  "version": "1.0.0",
+  "description": "My personal portfolio (possibly blog) website",
+  "main": "index.js",
+  "repository": "https://github.com/marandmart/portfolio.git",
+  "author": "Mario Andre Martins <mario.andre.m@gmail.com>",
+  "license": "MIT",
+  "workspaces": ["studio", "frontend"],
+  "private": true
+}
