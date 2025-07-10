@@ -5,7 +5,7 @@ import LinkedInIcon from "../../../public/linkedin.svg";
 
 export default function Hero() {
   return (
-    <section className="h-[100vh] flex flex-col justify-center align-middle pb-16 w-full md:w-[50%]">
+    <section className="h-[100vh] mt-5 min-h-fit md:px-2 flex flex-col justify-center align-middle w-full md:w-[50%]">
       <h2 className="text-4xl md:text-6xl font-bold mb-6 text-center">
         Mario Martins
       </h2>

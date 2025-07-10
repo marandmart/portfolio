@@ -1,7 +1,7 @@
 export default function About() {
   const paragraphClass = "text-base mb-4";
   return (
-    <section className="mb-16 pt-3 md:w-[50%] md:h-[100vh] md:flex md:flex-col md:items-center md:justify-center" id="about">
+    <section className="mb-16 md:mb-0 md:w-[50%] md:h-[100vh] md:px-2 md:flex md:flex-col md:items-center md:justify-center min-h-fit mt-5" id="about">
       <h2 className="text-4xl font-semibold mb-2 md:hidden">About</h2>
       <p className={paragraphClass}>
         Hello! I&apos;m a Software Developer with a passion for building
