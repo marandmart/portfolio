@@ -3,6 +3,7 @@
 import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/app/actions";
 import { useActionState } from "react";
+import Button from "./Button";
 
 const initialState = {
   message: "",
@@ -15,7 +16,11 @@ export const ContactForm = () => {
   const { pending } = useFormStatus();
 
   return (
-    <form action={formAction} className="space-y-4 max-w-2xl mx-auto mt-4 w-full" id="contact">
+    <form
+      action={formAction}
+      className="space-y-4 max-w-2xl mx-auto mt-4 w-full"
+      id="contact"
+    >
       <h2 className="text-4xl font-semibold mb-2">Get In Touch!</h2>
       <div>
         <label htmlFor="name">Name</label>
@@ -47,13 +52,12 @@ export const ContactForm = () => {
           className="border rounded-lg w-full p-2"
         />
       </div>
-      <button
+      <Button
         type="submit"
-        disabled={pending}
-        className="bg-white text-black p-2 rounded-lg disabled:bg-gray-400 hover:bg-blue-300 hover:cursor-pointer"
-      >
-        {pending ? "Submitting..." : "Send Message"}
-      </button>
+        text="Send Message"
+        pending={pending}
+        pendingText="Submitting..."
+      />
       {state.message && (
         <p className={state.success ? "text-green-600" : "text-red-600"}>
           {state.message}
