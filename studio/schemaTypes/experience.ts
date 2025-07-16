@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineField, defineType, ValidationContext} from 'sanity'
 
 export default defineType({
   name: 'experience',
@@ -87,6 +87,38 @@ export default defineType({
       type: 'array',
       validation: (Rule) => Rule.required(),
       of: [{type: 'string'}],
+    }),
+    defineField({
+      title: 'Projects worked on',
+      name: 'WorkedOnProjects',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'projectSlide',
+          title: 'Project Slide',
+          fields: [
+            defineField({
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+            }),
+            defineField({
+              name: 'projectTitle',
+              title: 'Project Title',
+              type: 'string',
+            }),
+            defineField({
+              name: 'projectDescription',
+              title: 'Project Description',
+              type: 'text',
+            }),
+          ],
+        },
+      ],
     }),
   ],
 })
