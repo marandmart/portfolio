@@ -1,4 +1,4 @@
-import {defineField, defineType, ValidationContext} from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'experience',
