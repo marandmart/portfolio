@@ -110,11 +110,13 @@ export default defineType({
               name: 'projectTitle',
               title: 'Project Title',
               type: 'string',
+              validation: (Rule) => Rule.required(),
             }),
             defineField({
               name: 'projectDescription',
               title: 'Project Description',
               type: 'text',
+              validation: (Rule) => Rule.required(),
             }),
           ],
         },

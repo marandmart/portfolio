@@ -25,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${epilogue.variable} antialiased relative`}>
-        <NavBar />
+        <header>
+          <NavBar />
+        </header>
         {children}
         <footer className="p-4 flex justify-between items-center gap-2">
           <p>&copy; 2025 Mario Andre Martins</p>
