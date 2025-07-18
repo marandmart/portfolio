@@ -1,4 +1,25 @@
 import { sanityGraphqlRequest } from "@/lib/sanity.graphql";
+import ImageCarousel from "./ImageCarousel";
+
+export interface IProjectWorkedOn {
+  _key: string;
+  projectTitle: string;
+  projectDescription: string;
+  image: {
+    asset: {
+      url: string;
+      size: number;
+      metadata: {
+        lqip: string;
+        dimensions: {
+          width: number;
+          height: number;
+          aspectRatio: number;
+        };
+      };
+    };
+  };
+}
 
 interface IExperience {
   _id: string;
@@ -11,6 +32,7 @@ interface IExperience {
   current: boolean;
   description: string;
   technologies: string[];
+  projectsWorkedOn: IProjectWorkedOn[];
 }
 
 interface SanityExperienceResponse {
@@ -30,6 +52,25 @@ const homePageExperienceQuery = `
     endDate
     current
     technologies
+    projectsWorkedOn {
+      _key
+      projectDescription
+      projectTitle
+      image {
+        asset {
+          url
+          size
+          metadata {
+            lqip
+            dimensions {
+              width
+              height
+              aspectRatio
+            }
+          }
+        }
+      }
+    }
   }
 }
 `;
@@ -44,7 +85,7 @@ export default async function Experience() {
   const experiences: IExperience[] = experiencesData?.allExperience ?? [];
 
   return (
-    <section className="mb-16" id="experience">
+    <section className="mb-16 max-w-[100%]" id="experience">
       <h2 className="text-4xl font-bold mb-2">Experience</h2>
       {experiences.map((experience) => {
         const startDate = new Date(experience.startDate).toLocaleDateString(
@@ -61,19 +102,22 @@ export default async function Experience() {
               year: "numeric",
             });
         return (
-          <article key={experience._id}>
-            <h3 className="text-2xl font-bold mb-2">{experience.company}</h3>
-            <p className="mb-2 font-semibold">
-              {experience.location} {experience.type}, {startDate} - {endDate}
-            </p>
-            <p className="mb-4">{experience.description}</p>
-            <ul className="flex flex-wrap gap-2 mb-8">
-              {experience.technologies?.map((tech) => (
-                <li key={`exp-tech-${tech}`} className={listItemClass}>
-                  {tech}
-                </li>
-              ))}
-            </ul>
+          <article key={experience._id} className="flex flex-col md:flex-row md:mt-12">
+            <div className="md:w-1/2 md:flex md:flex-col md:justify-center">
+              <h3 className="text-2xl font-bold mb-2">{experience.company}</h3>
+              <p className="mb-2 font-semibold">
+                {experience.location} {experience.type}, {startDate} - {endDate}
+              </p>
+              <p className="mb-4">{experience.description}</p>
+              <ul className="flex flex-wrap gap-2 mb-3">
+                {experience.technologies?.map((tech) => (
+                  <li key={`exp-tech-${tech}`} className={listItemClass}>
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <ImageCarousel {...experience} className={"mb-8 md:mb-12 md:w-1/2"} />
           </article>
         );
       })}

@@ -1,0 +1,47 @@
+"use client";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+import NotAvailable from "../../../public/not-available.png";
+import { IProjectWorkedOn } from "./Experience";
+
+interface ImageCarouselProps {
+  projectsWorkedOn: IProjectWorkedOn[];
+  className: string;
+}
+
+export default function ImageCarousel({
+  projectsWorkedOn,
+  className,
+}: ImageCarouselProps) {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 3000 }),
+  ]);
+
+  return (
+    <div className={`overflow-hidden ${className}`} ref={emblaRef}>
+      <div className="flex">
+        {projectsWorkedOn?.map((item) => (
+          <div
+            className="flex-[0_0_100%] relative min-w-0 flex items-center justify-center max-h-96"
+            key={item._key}
+          >
+            <div className="fixed hidden justify-center items-center h-full w-full hover:flex hover:flex-col hover:bg-[rgba(0,0,0,0.5)]">
+              <div className="text-white">{item.projectTitle}</div>
+              <div className="text-white">{item.projectDescription}</div>
+            </div>
+            <Image
+              src={item.image?.asset.url || NotAvailable}
+              alt={item.projectTitle || "Not Available"}
+              width={item.image?.asset.metadata.dimensions.width || 2048}
+              height={item.image?.asset.metadata.dimensions.height || 2048}
+              placeholder="blur"
+              blurDataURL={item.image?.asset.metadata.lqip}
+              className="w-auto h-full object-contain hover:opacity-25"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

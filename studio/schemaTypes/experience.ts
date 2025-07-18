@@ -90,37 +90,9 @@ export default defineType({
     }),
     defineField({
       title: 'Projects worked on',
-      name: 'WorkedOnProjects',
+      name: 'projectsWorkedOn',
       type: 'array',
-      of: [
-        {
-          type: 'object',
-          name: 'projectSlide',
-          title: 'Project Slide',
-          fields: [
-            defineField({
-              name: 'image',
-              title: 'Image',
-              type: 'image',
-              options: {
-                hotspot: true,
-              },
-            }),
-            defineField({
-              name: 'projectTitle',
-              title: 'Project Title',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-            }),
-            defineField({
-              name: 'projectDescription',
-              title: 'Project Description',
-              type: 'text',
-              validation: (Rule) => Rule.required(),
-            }),
-          ],
-        },
-      ],
+      of: [{type: 'projectSlide'}],
     }),
   ],
 })
