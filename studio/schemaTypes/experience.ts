@@ -88,5 +88,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
       of: [{type: 'string'}],
     }),
+    defineField({
+      title: 'Projects worked on',
+      name: 'projectsWorkedOn',
+      type: 'array',
+      of: [{type: 'projectSlide'}],
+    }),
   ],
 })

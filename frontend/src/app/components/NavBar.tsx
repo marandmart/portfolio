@@ -39,7 +39,7 @@ export default function NavBar() {
         Mario Martins
       </Link>
       <ul
-        className="flex gap-4 absolute top-12 left-0 right-0 px-10 overflow-x-scroll cursor-grab active:cursor-grabbing scrollbar-hide [background-image:var(--background-image)] xs:relative xs:top-auto xs:left-auto xs:right-auto xs:p-0 xs:overflow-x-visible xs:cursor-auto xs:active:cursor-auto xs:bg-none"
+        className="flex gap-4 absolute top-12 left-0 right-0 px-10 overflow-x-scroll cursor-grab active:cursor-grabbing scrollbar-hide [background-image:var(--background-image)] pb-1.5 xs:pb-0 xs:relative xs:top-auto xs:left-auto xs:right-auto xs:p-0 xs:overflow-x-visible xs:cursor-auto xs:active:cursor-auto xs:bg-none"
         ref={listRef}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
