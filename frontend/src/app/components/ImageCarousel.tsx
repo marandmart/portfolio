@@ -15,7 +15,7 @@ export default function ImageCarousel({
   className,
 }: ImageCarouselProps) {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 3000 }),
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true }),
   ]);
 
   return (
@@ -26,9 +26,9 @@ export default function ImageCarousel({
             className="flex-[0_0_100%] relative min-w-0 flex items-center justify-center max-h-96"
             key={item._key}
           >
-            <div className="fixed hidden justify-center items-center h-full w-full hover:flex hover:flex-col hover:bg-[rgba(0,0,0,0.5)]">
-              <div className="text-white">{item.projectTitle}</div>
-              <div className="text-white">{item.projectDescription}</div>
+            <div className="fixed opacity-0 hover:opacity-100 justify-center items-center h-full w-full hover:flex hover:flex-col hover:bg-[rgba(0,0,0,0.5)] hover:rounded-2xl">
+              <div className="text-white m-auto pl-4 pr-4 text-2xl font-semibold">{item.projectTitle}</div>
+              <div className="text-white m-auto pl-4 pr-4">{item.projectDescription}</div>
             </div>
             <Image
               src={item.image?.asset.url || NotAvailable}
@@ -37,7 +37,7 @@ export default function ImageCarousel({
               height={item.image?.asset.metadata.dimensions.height || 2048}
               placeholder="blur"
               blurDataURL={item.image?.asset.metadata.lqip}
-              className="w-auto h-full object-contain hover:opacity-25"
+              className="w-auto h-full object-contain"
             />
           </div>
         ))}
