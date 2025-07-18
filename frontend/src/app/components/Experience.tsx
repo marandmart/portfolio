@@ -103,7 +103,7 @@ export default async function Experience() {
             });
         return (
           <article key={experience._id} className="flex flex-col md:flex-row md:mt-12">
-            <div className="md:w-1/2 md:flex md:flex-col md:justify-center">
+            <div className="md:w-4/10 md:flex md:flex-col md:justify-center md:mr-2">
               <h3 className="text-2xl font-bold mb-2">{experience.company}</h3>
               <p className="mb-2 font-semibold">
                 {experience.location} {experience.type}, {startDate} - {endDate}
@@ -117,7 +117,7 @@ export default async function Experience() {
                 ))}
               </ul>
             </div>
-            <ImageCarousel {...experience} className={"mb-8 md:mb-12 md:w-1/2"} />
+            <ImageCarousel {...experience} className={"mb-8 md:mb-12 md:w-6/10 md:ml-2"} />
           </article>
         );
       })}
