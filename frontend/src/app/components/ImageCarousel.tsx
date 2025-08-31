@@ -20,7 +20,7 @@ export default function ImageCarousel({
 
   return (
     <div className={`overflow-hidden ${className}`} ref={emblaRef}>
-      <div className="flex">
+      <div className="flex h-full w-full">
         {projectsWorkedOn?.map((item) => (
           <div
             className="flex-[0_0_100%] relative min-w-0 flex items-center justify-center max-h-96"
