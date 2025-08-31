@@ -1,7 +1,8 @@
 "use server";
 
-import nodemailer from "nodemailer";
+// import nodemailer from "nodemailer";
 import { redis } from "@/lib/redis";
+import axios from "axios";
 import { headers } from "next/headers";
 
 type FormState = {
@@ -9,7 +10,7 @@ type FormState = {
   message: string;
 };
 
-const MAXIMUN_SUBMISSIONS = 3;
+const MAXIMUN_SUBMISSIONS = 300;
 
 export async function submitContactForm(
   prevState: FormState,
@@ -38,44 +39,58 @@ export async function submitContactForm(
     };
   }
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_SERVER_HOST,
-    port: Number(process.env.EMAIL_SERVER_PORT),
-    secure: true,
-    auth: {
-      type: "OAuth2",
-      clientId: process.env.GMAIL_CLIENT_ID,
-      clientSecret: process.env.GMAIL_CLIENT_SECRET,
-      user: process.env.EMAIL_SERVER_USER,
-      refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-    },
-  });
+  // const transporter = nodemailer.createTransport({
+  //   host: process.env.EMAIL_SERVER_HOST,
+  //   port: Number(process.env.EMAIL_SERVER_PORT),
+  //   secure: true,
+  //   auth: {
+  //     type: "OAuth2",
+  //     clientId: process.env.GMAIL_CLIENT_ID,
+  //     clientSecret: process.env.GMAIL_CLIENT_SECRET,
+  //     user: process.env.EMAIL_SERVER_USER,
+  //     refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+  //   },
+  // });
 
   try {
-    await transporter.sendMail({
-      from: process.env.EMAIL_SERVER_USER,
-      to: process.env.EMAIL_TO,
-      replyTo: email.toString(),
-      subject: `New Contact Form Submission from ${name}`,
-      html: `
-                <p>You have a new contact form submission:</p>
-                <ul>
-                  <li><strong>Name:</strong> ${name}</li>
-                  <li><strong>Email:</strong> ${email}</li>
-                </ul>
-                <p><strong>Message:</strong></p>
-                <p>${message}</p>
-            `,
-    });
+    // await transporter.sendMail({
+    //   from: process.env.EMAIL_SERVER_USER,
+    //   to: process.env.EMAIL_TO,
+    //   replyTo: email.toString(),
+    //   subject: `New Contact Form Submission from ${name}`,
+    //   html: `
+    //             <p>You have a new contact form submission:</p>
+    //             <ul>
+    //               <li><strong>Name:</strong> ${name}</li>
+    //               <li><strong>Email:</strong> ${email}</li>
+    //             </ul>
+    //             <p><strong>Message:</strong></p>
+    //             <p>${message}</p>
+    //         `,
+    // });
 
-    // expiration
-    const oneDayinSeconds = 60 * 60 * 24;
-    await redis.set(key, currentSubmissions + 1, { ex: oneDayinSeconds });
+    const response = await axios.post('https://formsubmit.co/ajax/mario.andre.m@gmail.com', {
+      name: `${name.toString()} - ${email.toString()}`,
+      message: `${message.toString()}`
+    })
 
-    return {
-      success: true,
-      message: "Your message has been sent successfully!",
-    };
+    if (response.status === 200) {
+      console.log(response)
+      // expiration
+      const oneDayinSeconds = 60 * 60 * 24;
+      await redis.set(key, currentSubmissions + 1, { ex: oneDayinSeconds });
+  
+      return {
+        success: true,
+        message: "Your message has been sent successfully!",
+      };
+    } else {
+      return {
+        success: false,
+        message: "Failed to send message. Please try again later.",
+      }
+    }
+
   } catch (error) {
     console.error("Failed to send email:", error);
     return {
