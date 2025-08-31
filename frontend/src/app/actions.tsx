@@ -1,8 +1,6 @@
 "use server";
 
-// import nodemailer from "nodemailer";
 import { redis } from "@/lib/redis";
-// import axios from "axios";
 import { headers } from "next/headers";
 
 type FormState = {
@@ -39,36 +37,7 @@ export async function submitContactForm(
     };
   }
 
-  // const transporter = nodemailer.createTransport({
-  //   host: process.env.EMAIL_SERVER_HOST,
-  //   port: Number(process.env.EMAIL_SERVER_PORT),
-  //   secure: true,
-  //   auth: {
-  //     type: "OAuth2",
-  //     clientId: process.env.GMAIL_CLIENT_ID,
-  //     clientSecret: process.env.GMAIL_CLIENT_SECRET,
-  //     user: process.env.EMAIL_SERVER_USER,
-  //     refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-  //   },
-  // });
-
   try {
-    // await transporter.sendMail({
-    //   from: process.env.EMAIL_SERVER_USER,
-    //   to: process.env.EMAIL_TO,
-    //   replyTo: email.toString(),
-    //   subject: `New Contact Form Submission from ${name}`,
-    //   html: `
-    //             <p>You have a new contact form submission:</p>
-    //             <ul>
-    //               <li><strong>Name:</strong> ${name}</li>
-    //               <li><strong>Email:</strong> ${email}</li>
-    //             </ul>
-    //             <p><strong>Message:</strong></p>
-    //             <p>${message}</p>
-    //         `,
-    // });
-
     formData.append("access_key", process.env.WEB3_FORMS_API_KEY!)
 
     const req = await fetch('https://api.web3forms.com/submit', {
