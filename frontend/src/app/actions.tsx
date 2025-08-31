@@ -74,8 +74,8 @@ export async function submitContactForm(
       message: `${message.toString()}`
     })
 
-    if (response.status === 200) {
-      console.log(response)
+    console.log(response);
+    if (response.data.success === 'true') {
       // expiration
       const oneDayinSeconds = 60 * 60 * 24;
       await redis.set(key, currentSubmissions + 1, { ex: oneDayinSeconds });
