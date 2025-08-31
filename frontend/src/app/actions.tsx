@@ -8,7 +8,7 @@ type FormState = {
   message: string;
 };
 
-const MAXIMUN_SUBMISSIONS = 300;
+const MAXIMUN_SUBMISSIONS = 3;
 
 export async function submitContactForm(
   prevState: FormState,
