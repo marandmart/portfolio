@@ -20,7 +20,7 @@ export default function ImageCarousel({
 
   return (
     <div className={`overflow-hidden ${className}`} ref={emblaRef}>
-      <div className="flex">
+      <div className="flex h-full w-full">
         {projectsWorkedOn?.map((item) => (
           <div
             className="flex-[0_0_100%] relative min-w-0 flex items-center justify-center max-h-96"
@@ -41,7 +41,7 @@ export default function ImageCarousel({
               height={item.image?.asset.metadata.dimensions.height || 2048}
               placeholder="blur"
               blurDataURL={item.image?.asset.metadata.lqip}
-              className="w-auto h-full object-contain rounded-2xl"
+              className="w-auto h-full object-contain"
             />
           </div>
         ))}
