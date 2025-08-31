@@ -41,7 +41,7 @@ export default function ImageCarousel({
               height={item.image?.asset.metadata.dimensions.height || 2048}
               placeholder="blur"
               blurDataURL={item.image?.asset.metadata.lqip}
-              className="w-auto h-full object-contain rounded-2xl"
+              className="w-auto h-full object-contain"
             />
           </div>
         ))}

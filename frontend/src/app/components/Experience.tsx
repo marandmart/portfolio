@@ -122,7 +122,7 @@ export default async function Experience() {
             </div>
             <ImageCarousel
               {...experience}
-              className={"mb-8 md:mb-12 md:w-6/10 md:ml-2 flex flex-col justify-center items-center"}
+              className={"mb-8 md:mb-12 md:w-6/10 md:ml-2 flex flex-col justify-center items-center min-h-36"}
             />
           </article>
         );
