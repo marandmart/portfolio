@@ -2,7 +2,7 @@
 
 // import nodemailer from "nodemailer";
 import { redis } from "@/lib/redis";
-import axios from "axios";
+// import axios from "axios";
 import { headers } from "next/headers";
 
 type FormState = {
@@ -69,13 +69,16 @@ export async function submitContactForm(
     //         `,
     // });
 
-    const response = await axios.post('https://formsubmit.co/ajax/mario.andre.m@gmail.com', {
-      name: `${name.toString()} - ${email.toString()}`,
-      message: `${message.toString()}`
+    formData.append("access_key", process.env.WEB3_FORMS_API_KEY!)
+
+    const req = await fetch('https://api.web3forms.com/submit', {
+      method: "POST",
+      body: formData
     })
 
-    console.log(response);
-    if (response.data.success === 'true') {
+    const response = await req.json();
+
+    if (response.success) {
       // expiration
       const oneDayinSeconds = 60 * 60 * 24;
       await redis.set(key, currentSubmissions + 1, { ex: oneDayinSeconds });

@@ -52,7 +52,6 @@ export const ContactForm = () => {
           className="border rounded-lg w-full p-2"
         />
       </div>
-      <input type="hidden" name="_url" value="https://mariomartins.dev/contact.html" />
       <Button
         type="submit"
         text="Send Message"
