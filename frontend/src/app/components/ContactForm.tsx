@@ -42,6 +42,10 @@ export const ContactForm = () => {
           className="border rounded-lg w-full p-2"
         />
       </div>
+      <div className="hidden">
+        <label htmlFor="url">URL</label>
+        <input type="text" id="url" name="url" />
+      </div>
       <div>
         <label htmlFor="message">Message</label>
         <textarea

@@ -14,6 +14,15 @@ export async function submitContactForm(
   prevState: FormState,
   formData: FormData
 ) {
+  const url = formData.get("url");
+
+  if (url) {
+    return {
+      success: true,
+      message: ''
+    }
+  }
+
   const ip = (await headers()).get("x-forwarded-for");
   const key = `contact_form_submission:${ip}`;
 
@@ -25,7 +34,7 @@ export async function submitContactForm(
       message: "You have reached the maximum number of submissions.",
     };
   }
-
+  
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
