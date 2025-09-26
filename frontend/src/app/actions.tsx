@@ -14,15 +14,6 @@ export async function submitContactForm(
   prevState: FormState,
   formData: FormData
 ) {
-  const url = formData.get("url");
-
-  if (url) {
-    return {
-      success: true,
-      message: ''
-    }
-  }
-
   const ip = (await headers()).get("x-forwarded-for");
   const key = `contact_form_submission:${ip}`;
 
@@ -38,6 +29,8 @@ export async function submitContactForm(
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
+  const url = formData.get("url");
+
 
   if (!name || !email || !message) {
     return {
@@ -45,6 +38,22 @@ export async function submitContactForm(
       message: "Please fill out all fields.",
     };
   }
+
+  // SPAM VERIFICATIONS
+  if (email.toString().includes("mariomartins.dev")) {
+    return {
+      success: true,
+      message: "",
+    };
+  }
+
+  if (url) {
+    return {
+      success: true,
+      message: ''
+    }
+  }
+// END
 
   try {
     formData.append("access_key", process.env.WEB3_FORMS_API_KEY!)
